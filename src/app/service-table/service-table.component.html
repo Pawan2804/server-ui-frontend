@@ -1,0 +1,37 @@
+<table>
+  <thead>
+    <tr>
+      <th>S.No</th>
+      <th></th>
+      <th>Name</th>
+
+      <th *ngFor="let location of locations">{{ location }}</th>
+      <!-- Dynamic location columns -->
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let service of services">
+      <td>{{ service.id }}</td>
+      <td>
+        <img
+          *ngIf="service.image && service.imageType"
+          [src]="'data:image/' + service.imageType + ';base64,' + service.image"
+          alt="Service Image"
+          width="100"
+        />
+        <div *ngIf="!service.image || !service.imageType">No Image</div>
+      </td>
+      <td>{{ service.name }}</td>
+
+      <td *ngFor="let location of locations">
+        <span
+          [class]="
+            service.statusLocation[location] === 'Active'
+              ? 'dot green'
+              : 'dot red'
+          "
+        ></span>
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,88 @@
+/* Compact Table layout */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px 0;
+  font-size: 12px; /* Smaller font size */
+  text-align: center; /* Center-align text for consistency */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+/* Table headers */
+th {
+  background-color: #007bff; /* Blue header */
+  color: white;
+  font-weight: bold;
+  padding: 4px 6px; /* Very compact padding */
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+/* Table rows */
+td {
+  padding: 4px 6px; /* Very compact padding */
+  border: 1px solid #ddd;
+  text-align: center;
+  vertical-align: middle; /* Center content vertically */
+}
+
+/* Alternate row colors */
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Dots */
+.dot {
+  height: 12px; /* Larger dot */
+  width: 12px; /* Larger dot */
+  border-radius: 50%;
+  display: inline-block;
+  margin: auto; /* Center in cell */
+}
+
+/* Green dot */
+.green {
+  background-color: #28a745;
+}
+
+/* Red dot */
+.red {
+  background-color: #dc3545;
+}
+
+/* Image styling */
+img {
+  height: 40px; /* Smaller height */
+  width: 40px; /* Smaller width */
+  border-radius: 5px; /* Slight rounding for aesthetics */
+  object-fit: cover; /* Ensures proper scaling without distortion */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive table */
+@media screen and (max-width: 768px) {
+  table {
+    font-size: 10px; /* Smaller font size for small screens */
+  }
+
+  th,
+  td {
+    padding: 3px 4px; /* Very compact padding for smaller screens */
+  }
+
+  img {
+    height: 30px; /* Even smaller images for small screens */
+    width: 30px;
+  }
+
+  .dot {
+    height: 10px; /* Slightly smaller dot for small screens */
+    width: 10px;
+  }
+}
